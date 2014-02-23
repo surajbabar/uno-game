@@ -61,7 +61,7 @@ public class MessageChannel {
         if (!keepRunning) return;
         keepRunning = false;
         try {
-            if(!Thread.currentThread().equals(readThread))
+            if (!Thread.currentThread().equals(readThread))
                 readThread.join();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
