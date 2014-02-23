@@ -6,14 +6,13 @@ import com.step.communication.factory.UnoFactory;
 import com.step.uno.client.model.GameClient;
 import com.step.uno.client.view.JoinGameView;
 import com.step.uno.client.view.PlayerView;
-import com.step.uno.messages.GameResult;
-import com.step.uno.messages.NoActionOnDrawnCard;
 import com.step.uno.messages.Snapshot;
 import com.step.uno.messages.WaitingForDrawnCardAction;
 
 import java.lang.reflect.InvocationTargetException;
 
 public class GameClientController implements MessageChannelListener {
+    private final PlayerScreenController controller;
     private UnoFactory factory;
     private JoinGameView joinGameView;
     private PlayerView playerView;
@@ -22,6 +21,7 @@ public class GameClientController implements MessageChannelListener {
 
     public GameClientController(UnoFactory factory) {
         this.factory = factory;
+        controller =factory.createScreenController();
     }
 
     public void join(String serverAddress, String playerName) {
@@ -29,6 +29,7 @@ public class GameClientController implements MessageChannelListener {
         channel.startListeningForMessages(this);
         gameClient = factory.createGameClient(channel);
         gameClient.sendIntroduction(playerName);
+
     }
 
     @Override
@@ -38,9 +39,9 @@ public class GameClientController implements MessageChannelListener {
 
     private void handle(Snapshot snapshot) {
         if (playerView == null){
-            playerView = joinGameView.switchToPlayerView(gameClient, snapshot);
+            playerView = joinGameView.switchToPlayerView(controller, snapshot);
         }
-        else playerView.update(snapshot);
+        else playerView.update(controller);
     }
 
     private void handle(WaitingForDrawnCardAction waiting) {

@@ -20,7 +20,7 @@ public class GameClientControllerTest {
 
     @Before
     public void setup() {
-        when(joinGameView.switchToPlayerView(Matchers.<GameClient>any(), Matchers.<Snapshot>any())).thenReturn(playerView);
+        when(joinGameView.switchToPlayerView(Matchers.<PlayerScreenController>any(), Matchers.<Snapshot>any())).thenReturn(playerView);
         controller = new GameClientController(stub);
         controller.bindView(joinGameView);
     }
@@ -43,7 +43,7 @@ public class GameClientControllerTest {
         controller.join("serverAddress", "me");
         Snapshot snapshot = new Snapshot();
         controller.onMessage(stub.channel, snapshot);
-        verify(joinGameView, times(1)).switchToPlayerView(stub.gameClient, snapshot);
+        verify(joinGameView, times(1)).switchToPlayerView(stub.createScreenController(), snapshot);
     }
 
 
@@ -54,7 +54,7 @@ public class GameClientControllerTest {
         controller.onMessage(stub.channel, snapshot);
 
         controller.onMessage(stub.channel, snapshot);
-        verify(playerView, times(1)).update(snapshot);
+        verify(playerView, times(1)).update(stub.createScreenController());
     }
 
 

@@ -1,6 +1,7 @@
 package com.step.uno.client.screen;
 
 import com.step.uno.client.controller.GameClientController;
+import com.step.uno.client.controller.PlayerScreenController;
 import com.step.uno.client.model.GameClient;
 import com.step.uno.client.view.JoinGameView;
 import com.step.uno.client.view.PlayerView;
@@ -44,8 +45,8 @@ public class JoinGameScreen extends JFrame implements JoinGameView {
     }
 
     @Override
-    public PlayerView switchToPlayerView(GameClient gameClient, Snapshot snapshot) {
-        PlayerView view = new PlayerScreen(gameClient, snapshot);
+    public PlayerView switchToPlayerView(PlayerScreenController screenController, Snapshot snapshot) {
+        PlayerView view = new PlayerScreen(screenController, snapshot);
         setVisible(false);
         return view;
     }
