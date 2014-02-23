@@ -26,15 +26,15 @@ public class JoinGameScreen extends JFrame implements JoinGameView {
         this.controller = controller;
         Panel panel = new Panel();
         masterName.setText("localhost");
-        panel.add(master).setFont(new Font("vardana", Font.BOLD, 22));
+        panel.add(master).setFont(new Font("verdana", Font.BOLD, 22));
         panel.add(masterName).setBounds(100, 100, 100, 100);
-        panel.add(playerName).setFont(new Font("vardana", Font.BOLD, 22));
-        name.setFont(new Font("vardana", Font.BOLD, 18));
+        panel.add(playerName).setFont(new Font("verdana", Font.BOLD, 22));
+        name.setFont(new Font("verdana", Font.BOLD, 18));
         name.setPreferredSize(new Dimension(20, 30));
         masterName.setPreferredSize(new Dimension(20, 30));
-        masterName.setFont(new Font("vardana", Font.BOLD, 18));
+        masterName.setFont(new Font("verdana", Font.BOLD, 18));
         panel.add(name);
-        join.setFont(new Font("vardana", Font.BOLD, 22));
+        join.setFont(new Font("verdana", Font.BOLD, 22));
         panel.add(join).setSize(100, 500);
 
         setSize(330, 370);
