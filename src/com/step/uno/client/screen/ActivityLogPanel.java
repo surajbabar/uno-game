@@ -3,12 +3,12 @@ package com.step.uno.client.screen;
 import javax.swing.*;
 import java.awt.*;
 
-public class ActivityLog extends JPanel {
+public class ActivityLogPanel extends JPanel {
 
     private final JPanel logPanel =new JPanel();
     private JScrollPane scrollPane = new JScrollPane();
 
-    public ActivityLog() {
+    public ActivityLogPanel() {
         Label activityLabel = new Label("Activity Log");
         activityLabel.setFont(new Font("verdana", Font.BOLD, 22));
         logPanel.add(activityLabel);

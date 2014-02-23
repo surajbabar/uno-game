@@ -3,10 +3,10 @@ package com.step.uno.client.screen;
 import javax.swing.*;
 import java.awt.*;
 
-public class OpenCard extends JPanel {
+public class OpenCardPanel extends JPanel {
     JButton openPile = new JButton();
 
-    public OpenCard(Color color, String sign) {
+    public OpenCardPanel(Color color, String sign) {
         setOpenCard(color, sign);
         openPile.setPreferredSize(new Dimension(100, 150));
         openPile.setEnabled(false);
