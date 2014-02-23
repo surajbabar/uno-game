@@ -22,7 +22,7 @@ public class MessageChannelTest {
 
     }
     @Test
-    public void stop_message_channel_closes_socket() throws IOException {
+    public void messageChannelClosesSocketOnStop() throws IOException {
         messageChannel.stop();
        verify(mockedSocket,times(1)).close();
     }
