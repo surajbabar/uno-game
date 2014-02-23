@@ -1,7 +1,5 @@
 package com.step.uno.client.screen;
 
-import com.step.uno.messages.Snapshot;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -11,9 +9,9 @@ public class ActivityLog extends JPanel {
     private JScrollPane scrollPane = new JScrollPane();
 
     public ActivityLog() {
-        Label activityLable = new Label("Activity Log");
-        activityLable.setFont(new Font("vardana", Font.BOLD, 22));
-        logPanel.add(activityLable);
+        Label activityLabel = new Label("Activity Log");
+        activityLabel.setFont(new Font("verdana", Font.BOLD, 22));
+        logPanel.add(activityLabel);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         logPanel.setVisible(true);
@@ -26,9 +24,8 @@ public class ActivityLog extends JPanel {
 
     }
 
-    public void update(Snapshot snapshot) {
-        String lastPlayerName=snapshot.playerSummaries[snapshot.currentPlayerIndex].name;
-        logPanel.add( new TextArea(snapshot.openCard.toString() +"was played by"+lastPlayerName));
-
+    public void update(String player,String card) {
+        logPanel.add( new TextArea(player+" played "+card));
+        logPanel.revalidate();
    }
 }
