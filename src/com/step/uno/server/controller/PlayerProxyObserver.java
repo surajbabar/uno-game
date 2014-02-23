@@ -1,4 +1,8 @@
-package com.step.uno.model;
+package com.step.uno.server.controller;
+
+import com.step.uno.model.Card;
+import com.step.uno.model.Colour;
+import com.step.uno.model.Player;
 
 public interface PlayerProxyObserver {
     void onPlayerRegistered(Player player);

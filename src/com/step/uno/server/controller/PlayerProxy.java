@@ -1,9 +1,13 @@
-package com.step.uno.model;
+package com.step.uno.server.controller;
 
 
 import com.step.communication.channel.MessageChannel;
 import com.step.communication.channel.MessageChannelListener;
 import com.step.uno.messages.*;
+import com.step.uno.model.Card;
+import com.step.uno.model.Game;
+import com.step.uno.model.Player;
+import com.step.uno.model.PlayerProxyObserver;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
