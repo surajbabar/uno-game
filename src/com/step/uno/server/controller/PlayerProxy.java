@@ -7,7 +7,6 @@ import com.step.uno.messages.*;
 import com.step.uno.model.Card;
 import com.step.uno.model.Game;
 import com.step.uno.model.Player;
-import com.step.uno.model.PlayerProxyObserver;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

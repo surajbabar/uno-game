@@ -4,7 +4,7 @@ import com.step.communication.channel.MessageChannel;
 import com.step.uno.client.model.GameClient;
 import com.step.uno.model.Game;
 import com.step.uno.model.Player;
-import com.step.uno.model.PlayerProxy;
+import com.step.uno.server.controller.PlayerProxy;
 import com.step.uno.server.controller.GameMasterController;
 
 import java.util.List;

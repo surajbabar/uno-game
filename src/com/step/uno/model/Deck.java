@@ -1,15 +1,14 @@
 package com.step.uno.model;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 public class Deck {
     private List<Card> cards = new ArrayList<>();
 
-    public Deck(Card[] cards) {
-        this.cards.addAll(Arrays.asList(cards));
+    public Deck(List<Card> cards) {
+        this.cards.addAll(cards);
     }
 
     public Deck() {
