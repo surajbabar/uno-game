@@ -1,9 +1,9 @@
 package com.step.uno.client.view;
 
-import com.step.uno.messages.Snapshot;
+import com.step.uno.client.controller.PlayerScreenController;
 
 public interface PlayerView {
     void showDisconnected();
 
-    void update(Snapshot snapshot);
+    void update(PlayerScreenController controller);
 }
